@@ -22,11 +22,14 @@ body {
     top: 0;
     z-index: 30;
 }
-
+.filter-toggle {
+    display: none;
+}
 .nav-actions {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-left: 47px;
 }
 
 .logo {
@@ -458,4 +461,61 @@ body {
 
 .add-btn:hover {
     background: #e68900;
+}
+
+.filter-toggle,
+.mobile-filter-bar{
+    display:none;
+}
+
+@media (max-width:768px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    .container{
+        display:block;
+        padding:15px;
+    }
+
+    .mobile-filter-bar{
+        display:block;
+        margin-bottom:15px;
+    }
+
+    .filter-toggle{
+        display:inline-block;
+        background:#1a1a2e;
+        color:white;
+        border:none;
+        padding:10px 16px;
+        border-radius:6px;
+        cursor:pointer;
+        font-weight:bold;
+    }
+
+    .sidebar{
+        position:fixed;
+        left:-280px;
+        top:135px;
+        width:250px;
+        height:100vh;
+        z-index:100;
+        transition:left .3s ease;
+        overflow-y:auto;
+    }
+
+    .sidebar.show{
+        left:0;
+    }
+
+    .products{
+        justify-content:center;
+    }
+
+    .card{
+        width:100%;
+        max-width:350px;
+    }
 }
