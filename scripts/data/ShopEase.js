@@ -207,4 +207,25 @@ if (filterToggle && sidebar) {
         sidebar.classList.toggle('show');
     });
 }
+const mobileSearchButton =
+    document.getElementById('mobile-search-toggle');
+
+const navbar =
+    document.querySelector('.navbar');
+
+const searchInput =
+    document.getElementById('search-input');
+
+if (mobileSearchButton && navbar) {
+
+    mobileSearchButton.addEventListener('click', () => {
+
+        navbar.classList.add('search-open');
+
+        setTimeout(() => {
+            searchInput.focus();
+        }, 100);
+    });
+
+}
 renderProducts(products);
